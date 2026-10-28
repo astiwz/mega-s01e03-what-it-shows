@@ -36,4 +36,9 @@ The desk's five one-day-move notes (R-41202, R-41209, R-41236, R-41344, and R-41
 belong to the parser group. Read them as evidence about reports filed under #4471, not as a
 third cause.
 
+## Tickets
+
+- [Shared parser · 379 reports](https://github.com/astiwz/mega-s01e03-what-it-shows/issues/1)
+- [Booking-v3 hint · 33 reports](https://github.com/astiwz/mega-s01e03-what-it-shows/issues/2)
+
 <RenderStamp {signature} />
