@@ -1,0 +1,39 @@
+---
+layout: runbook
+title: '#4471 · two date problems, 412 reports'
+owner: Ashish Tiwari
+status: known
+reviewed: 2026-10-29
+signature: Ashish Tiwari
+---
+
+<script>
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The export contains 427 rows, but 15 repeat report IDs. Counting each report once leaves
+**412 reports** merged into #4471. They do not describe one bug. Tenant locale and
+booking-form version separate them into two problems.
+
+## The split
+
+| Problem | Reports | What breaks |
+| --- | ---: | --- |
+| Shared parser | **379** | The parser reads month first, but day-first tenants expect day first. |
+| Booking-v3 hint | **33** | The form shows `MM/DD/YYYY` to day-first tenants, so the hint and tenant date handling disagree. |
+
+The parser reports span all 11 day-first tenants and app, email, and form channels. The hint
+reports are form submissions from the three day-first tenants using booking-v3: alder.physio,
+copper.studio, and pale.harbour.
+
+## Intake tags are not causes
+
+Intake tagged 356 parser reports `parser` and 23 `hint`. It tagged 18 hint reports `hint` and
+15 `parser`. These labels are guesses, not independent problem counts: classify by tenant
+locale, form version, and channel instead.
+
+The desk's five one-day-move notes (R-41202, R-41209, R-41236, R-41344, and R-41620) all
+belong to the parser group. Read them as evidence about reports filed under #4471, not as a
+third cause.
+
+<RenderStamp {signature} />
