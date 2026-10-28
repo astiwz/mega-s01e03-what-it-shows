@@ -31,7 +31,7 @@
       <header>
         <a class="crumb" href="/kb">support desk · kb</a>
         <h1>#4471 · two date problems, 412 reports</h1>
-        <p class="meta"><span>owner <b>Ashish Tiwari</b></span><span class="status">known</span><span>reviewed 2026-10-29</span></p>
+        <p class="meta"><span>owner <b>Ashish Tiwari</b></span><span class="status">resolved</span><span>reviewed 2026-10-29</span></p>
       </header>
       <main>
         <p>The date reports merged into #4471 do not describe one bug. Tenant locale, booking-form version, and channel separate them into two causes. The table below deduplicates overlapping export rows by report ID, then classifies each report from its tenant and submission path.</p>
@@ -56,8 +56,12 @@
         </ul>
         <p>The accepted historical <a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a> is preserved as evidence of the old rule. This page documents the contrary evidence for #4471; it does not claim that the desk has accepted a replacement policy.</p>
         <h2>Resolution record</h2>
-        <p>This page completes the analysis of the exported reports, not a product-code fix. The linked issues track the parser and hint findings separately. Their resolution should link to this signed page and its rendered snapshot so that the desk can check the evidence.</p>
-        <p>The export is a snapshot dated 2026-10-04. Before treating either product problem as fixed, the desk must check its current reports and fix status. A closed analysis issue is not evidence that the parser or booking form has been repaired.</p>
+        <p>The <a href="https://hq.mega.dev/challenges/what-it-shows">course's engineering update</a> says that #4471 closed on 5 October, after the 2026-10-04 export snapshot:</p>
+        <ul>
+          <li><strong>Parser: fixed.</strong> Engineering's resolution is <code>fix(dates): parse dd/mm for eu locales</code>. Close the shared parser issue as <strong>completed</strong>.</li>
+          <li><strong>Hint: won't fix.</strong> Engineering's reason is <code>booking-v3 form retired</code>. Close the booking-v3 hint issue as <strong>not planned</strong>, not as a shipped hint fix.</li>
+        </ul>
+        <p>The report counts above describe the exported incident, not ongoing failures after closure. These resolutions come from the desk's engineering update; this repository contains the analysis and KB evidence, not the product implementation or deployment verification.</p>
         <h2>Tickets</h2>
         <ul>
           <li><a href="https://github.com/astiwz/mega-s01e03-what-it-shows/issues/1">Shared parser issue</a></li>

@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · two date problems, 412 reports'
 owner: Ashish Tiwari
-status: known
+status: resolved
 reviewed: 2026-10-29
 signature: Ashish Tiwari
 ---
@@ -47,13 +47,17 @@ not claim that the desk has accepted a replacement policy.
 
 ## Resolution record
 
-This page completes the analysis of the exported reports, not a product-code fix.
-The linked issues track the parser and hint findings separately. Their resolution should
-link to this signed page and its rendered snapshot so that the desk can check the evidence.
+The [course's engineering update](https://hq.mega.dev/challenges/what-it-shows) says that
+#4471 closed on 5 October, after the 2026-10-04 export snapshot:
 
-The export is a snapshot dated 2026-10-04. Before treating either product problem as fixed,
-the desk must check its current reports and fix status. A closed analysis issue is not
-evidence that the parser or booking form has been repaired.
+- **Parser: fixed.** Engineering's resolution is `fix(dates): parse dd/mm for eu locales`.
+  Close the shared parser issue as **completed**.
+- **Hint: won't fix.** Engineering's reason is `booking-v3 form retired`.
+  Close the booking-v3 hint issue as **not planned**, not as a shipped hint fix.
+
+The report counts above describe the exported incident, not ongoing failures after closure.
+These resolutions come from the desk's engineering update; this repository contains the
+analysis and KB evidence, not the product implementation or deployment verification.
 
 ## Tickets
 
