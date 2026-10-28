@@ -28,6 +28,33 @@ shown for comparison rather than used to group reports.
 The desk's one-day-move notes (R-41202, R-41209, R-41236, R-41344, and R-41620) are evidence
 within the parser group, not a third cause.
 
+## How the desk should use this split
+
+The [subject-only merge rule](/kb/triage/dedupe) is not reliable for these reports.
+The existing classifier and triage explorer compare causes instead: the same subject can
+describe different problems, and different subjects can describe the same problem.
+
+- A booking-v3 form report from alder.physio and an app report from the same tenant belong
+  to different causes, even when both say "Booking on the wrong date".
+- Booking-v3 form reports from pale.harbour and alder.physio share the hint cause, even
+  when their subjects differ.
+- Without tenant metadata, the cause is unknown. Do not merge on a matching subject alone;
+  first establish the tenant, locale, form version, and channel.
+
+The accepted historical [decision 0001](/kb/decisions/0001-dedupe-by-subject) is preserved
+as evidence of the old rule. This page documents the contrary evidence for #4471; it does
+not claim that the desk has accepted a replacement policy.
+
+## Resolution record
+
+This page completes the analysis of the exported reports, not a product-code fix.
+The linked issues track the parser and hint findings separately. Their resolution should
+link to this signed page and its rendered snapshot so that the desk can check the evidence.
+
+The export is a snapshot dated 2026-10-04. Before treating either product problem as fixed,
+the desk must check its current reports and fix status. A closed analysis issue is not
+evidence that the parser or booking form has been repaired.
+
 ## Tickets
 
 - [Shared parser issue](https://github.com/astiwz/mega-s01e03-what-it-shows/issues/1)
